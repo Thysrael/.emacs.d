@@ -1,8 +1,6 @@
 \#*
 *~
-.cache/
-auto-save-list/
 elpa/
+var/
+etc/
 amx-items
-cnfonts/
-recentf
