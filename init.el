@@ -192,8 +192,7 @@
   :diminish
   :config
   (which-key-mode)
-  (setq which-key-idle-delay 500)
-  (setq which-key-idle-secondary-delay 0.05))
+  (which-key-setup-side-window-right))
 
 (use-package lsp-mode
   :init
@@ -426,7 +425,15 @@ Other buffer group by `centaur-tabs-get-group-name' with project name."
           rime-predicate-prog-in-code-p
 	  rime-predicate-space-after-cc-p
 	  rime-predicate-punctuation-line-begin-p
-	  rime-predicate-after-ascii-char-p)))
+	  rime-predicate-after-ascii-char-p))
+  (add-hook 'kill-emacs-hook #'rime-lib-finalize))
+
+;; (use-package chinese-pyim
+;;   :config 
+;;   (setq default-input-method "chinese-pyim")
+;;   (setq pyim-use-tooltip t)
+;;   :bind
+;;   ("C-\\" . toggle-input-method))
 
 (use-package flycheck
   :config
